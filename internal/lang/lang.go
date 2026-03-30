@@ -104,7 +104,6 @@ var extensionLanguage = map[string]string{
 	".tex":           "TeX",
 	".tf":            "Terraform",
 	".tfvars":        "Terraform",
-	".txt":           "Text",
 	".toml":          "TOML",
 	".ts":            "TypeScript",
 	".tsx":           "TypeScript",
@@ -216,7 +215,7 @@ var languageCommentSyntax = map[string]CommentSyntax{
 func DetectLanguage(fileName string) string {
 	lower := strings.ToLower(strings.TrimSpace(fileName))
 	if lower == "" {
-		return "Text"
+		return "Unknown"
 	}
 
 	if language, ok := specialFileLanguage[lower]; ok {
@@ -230,7 +229,7 @@ func DetectLanguage(fileName string) string {
 		}
 	}
 
-	return "Text"
+	return "Unknown"
 }
 
 func sortedSuffixes(m map[string]string) []string {
