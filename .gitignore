@@ -1,0 +1,12 @@
+# Build artifacts
+scanner
+scanner.exe
+dist/
+
+# Reports
+report.html
+report.json
+
+# OS
+.DS_Store
+Thumbs.db
